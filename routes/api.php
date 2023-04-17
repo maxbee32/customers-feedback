@@ -55,7 +55,7 @@ Route:: post("cust-feedback","App\Http\Controllers\UserController@custFeedback")
 
 });
 
-Route::get('send',function(){
+Route::post('send',function(){
     return Artisan::call('sendemail:cron');
 });
 
