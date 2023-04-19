@@ -50,20 +50,23 @@ class SendEmails extends Command
        // $Yes =$result->pluck('yes');
         // $email = $result->pluck('email');
 
-         foreach ($result as $result){
+
+        foreach ($result as $key => $result){
+
             if($result->no > $result->yes){
 
             $email = $result->email;
 
 
 
-        // if($result->pluck('No') > $result->pluck('Yes')){
+            }
 
 
        Mail::to($email)->cc('customerfeedbackapp@izweghana.com')->send(new PromptEmail($result));
            //Mail::to($email)->send(new PromptEmail($result));
-      }
- }
 
+
+
+    }
     }
 }
