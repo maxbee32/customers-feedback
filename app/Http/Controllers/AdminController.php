@@ -510,8 +510,8 @@ public function getComplainToday(Request $request){
         ->get();
 
         // customerfeedbackapp@izweghana.com
-        $No =$result->pluck('No');
-        $Yes =$result->pluck('Yes');
+        $No =$result->pluck('no');
+        $Yes =$result->pluck('yes');
         $email = $result->pluck('email');
 
         // echo($result->pluck('yes'));
