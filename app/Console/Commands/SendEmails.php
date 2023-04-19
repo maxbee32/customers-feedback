@@ -64,6 +64,5 @@ class SendEmails extends Command
           Mail::to($email)->send(new PromptEmail($result));
       }
  }
-  return 0;
     }
 }
