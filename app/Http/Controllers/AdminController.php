@@ -500,9 +500,9 @@ public function getComplainToday(Request $request){
         ->where(DB::raw('DATE(complains.created_at)',''),[$date1])
         ->select(array(
             DB::raw("SUM(CASE
-            WHEN complains.comment = 'No' THEN 1  ELSE 0 END) AS No"),
+            WHEN complains.comment = 'No' THEN 1  ELSE 0 END) AS no"),
             DB::raw("SUM(CASE
-            WHEN  complains.comment = 'Yes' THEN 1 ELSE 0 END) AS Yes"),
+            WHEN  complains.comment = 'Yes' THEN 1 ELSE 0 END) AS yes"),
             DB::raw("COUNT(Complains.comment) As comment"),
             DB::raw("DATE(complains.created_at) As date"),
             'email', 'branch'))
@@ -513,6 +513,8 @@ public function getComplainToday(Request $request){
         $No =$result->pluck('No');
         $Yes =$result->pluck('Yes');
         $email = $result->pluck('email');
+
+        // echo($result->pluck('yes'));
 
          foreach ($result as $result){
             if($No > $Yes){

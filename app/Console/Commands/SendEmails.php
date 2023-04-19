@@ -36,9 +36,9 @@ class SendEmails extends Command
         ->where(DB::raw('DATE(complains.created_at)',''),[$date1])
         ->select(array(
             DB::raw("SUM(CASE
-            WHEN complains.comment = 'No' THEN 1  ELSE 0 END) AS No"),
+            WHEN complains.comment = 'No' THEN 1  ELSE 0 END) AS no"),
             DB::raw("SUM(CASE
-            WHEN  complains.comment = 'Yes' THEN 1 ELSE 0 END) AS Yes"),
+            WHEN  complains.comment = 'Yes' THEN 1 ELSE 0 END) AS yes"),
             DB::raw("COUNT(Complains.comment) As comment"),
             DB::raw("DATE(complains.created_at) As date"),
             'email', 'branch'))
@@ -46,8 +46,8 @@ class SendEmails extends Command
         ->get();
 
         // customerfeedbackapp@izweghana.com
-        $No =$result->pluck('No');
-        $Yes =$result->pluck('Yes');
+        $No =$result->pluck('no');
+        $Yes =$result->pluck('yes');
         $email = $result->pluck('email');
 
          foreach ($result as $result){
