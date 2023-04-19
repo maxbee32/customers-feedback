@@ -9,8 +9,8 @@ We received these feedback today on {{$details->date}} from your {{$details->bra
 
 | Customer's feedback for the day        |
 | -------------------------------------- |
-| Negative feedbacks {{$details->No}}.   |
-| Positive feedbacks {{$details->Yes}}.  |
+| Negative feedbacks {{$details->no}}.   |
+| Positive feedbacks {{$details->yes}}.  |
 | Total feedbacks {{$details->comment}}. |
 
 
