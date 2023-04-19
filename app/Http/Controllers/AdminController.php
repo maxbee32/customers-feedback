@@ -510,8 +510,8 @@ public function getComplainToday(Request $request){
         ->get();
 
         // customerfeedbackapp@izweghana.com
-        $No =$result->pluck('no');
-        $Yes =$result->pluck('yes');
+        $No =$result->pluck('No');
+        $Yes =$result->pluck('Yes');
         $email = $result->pluck('email');
 
          foreach ($result as $result){
@@ -525,14 +525,14 @@ public function getComplainToday(Request $request){
 
 
     //    Mail::to($email)->cc('customerfeedbackapp@izweghana.com')->send(new PromptEmail($result));
-        //   Mail::to($email)->send(new PromptEmail($result));
+           Mail::to($email)->send(new PromptEmail($result));
       }
  }
- return $this ->sendResponse([
-    'success' => true,
-     'message' => $result,
+//  return $this ->sendResponse([
+//     'success' => true,
+//      'message' => $result,
 
-   ],200);
+//    ],200);
 //   return 0;
 
     }

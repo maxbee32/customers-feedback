@@ -46,8 +46,8 @@ class SendEmails extends Command
         ->get();
 
         // customerfeedbackapp@izweghana.com
-        $No =$result->pluck('no');
-        $Yes =$result->pluck('yes');
+        $No =$result->pluck('No');
+        $Yes =$result->pluck('Yes');
         $email = $result->pluck('email');
 
          foreach ($result as $result){
