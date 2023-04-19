@@ -60,7 +60,7 @@ class SendEmails extends Command
         // if($result->pluck('No') > $result->pluck('Yes')){
 
 
-       Mail::to($email)->cc('customerfeedbackapp@izweghana.com')->send(new PromptEmail($result));
+       Mail::to($email)->cc('mboakye94@yahoo.com')->send(new PromptEmail($result));
            //Mail::to($email)->send(new PromptEmail($result));
       }
  }
