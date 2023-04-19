@@ -525,14 +525,14 @@ public function getComplainToday(Request $request){
 
 
     //    Mail::to($email)->cc('customerfeedbackapp@izweghana.com')->send(new PromptEmail($result));
-           Mail::to($email)->send(new PromptEmail($result));
+        //    Mail::to($email)->send(new PromptEmail($result));
       }
  }
-//  return $this ->sendResponse([
-//     'success' => true,
-//      'message' => $result,
+ return $this ->sendResponse([
+    'success' => true,
+     'message' => $result,
 
-//    ],200);
+   ],200);
 //   return 0;
 
     }
