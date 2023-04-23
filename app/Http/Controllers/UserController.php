@@ -70,7 +70,7 @@ class UserController extends Controller
         $branch  = auth()->user()->branch;
         $validator = Validator::make($request->all(), [
 
-            'phone_number'=>['required','min:10'],
+            'phone_number'=>['nullable'],
             'comment'=> ['required','in:No,Yes'],
             'branch'=> $branch
         ]);

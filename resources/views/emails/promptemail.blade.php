@@ -1,13 +1,13 @@
 
 @component('mail::message')
-# Customer's Feedback
+# Client's Feedback
 
 Hello branch manager {{$details->email}}.
 We received these feedback today on {{$details->date}} from your {{$details->branch}} branch.
 
 
 
-| Customer's feedback for the day        |
+| Client's feedback for the day        |
 | -------------------------------------- |
 | Negative feedbacks {{$details->no}}.   |
 | Positive feedbacks {{$details->yes}}.  |
