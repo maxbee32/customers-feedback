@@ -45,28 +45,21 @@ class SendEmails extends Command
         ->groupby('branch','email', 'date')
         ->get();
 
-        // customerfeedbackapp@izweghana.com
-       // $No =$result->pluck('no');
-       // $Yes =$result->pluck('yes');
-        // $email = $result->pluck('email');
+
 
 
         foreach ($result as $key => $result){
 
-            if($result->no > $result->yes){
+            // if($result->no > $result->yes){
 
             $email = $result->email;
 
-
-
-            }
+           // }
 
 
        Mail::to($email)->cc('customerfeedbackapp@izweghana.com')->send(new PromptEmail($result));
-           //Mail::to($email)->send(new PromptEmail($result));
-
 
 
     }
-    }
+     }
 }
