@@ -262,6 +262,8 @@ public function getComplainToday(Request $request){
         ], 400);
 
     }
+    
+
 
     $startDate =carbon::parse($request->start_date);
     $endDate = carbon::parse($request->end_date);
