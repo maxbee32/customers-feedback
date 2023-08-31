@@ -170,7 +170,7 @@ public function getComplainToday(Request $request){
 
 
 
-    if($validator-> fails()){
+    if($validator->stopOnFirstFailure()->fails()){
         return $this->sendResponse([
             'success' => false,
             'data'=> $validator->errors(),
@@ -254,7 +254,7 @@ public function getComplainToday(Request $request){
 
 
 
-    if($validator-> fails()){
+    if($validator->stopOnFirstFailure()->fails()){
         return $this->sendResponse([
             'success' => false,
             'data'=> $validator->errors(),
@@ -262,7 +262,7 @@ public function getComplainToday(Request $request){
         ], 400);
 
     }
-    
+
 
 
     $startDate =carbon::parse($request->start_date);
@@ -578,7 +578,7 @@ public function getComplainToday(Request $request){
 
     ]);
 
-    if($validator-> fails()){
+    if($validator->stopOnFirstFailure()->fails()){
         return $this->sendResponse([
             'success' => false,
             'data'=> $validator->errors(),
@@ -623,7 +623,7 @@ public function getComplainToday(Request $request){
 
     ]);
 
-    if($validator-> fails()){
+    if($validator->stopOnFirstFailure()->fails()){
         return $this->sendResponse([
             'success' => false,
             'data'=> $validator->errors(),
